@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - image: gcr.io/k8s-staging-capi-operator/cluster-api-operator:dev
+        - image: registry-proxy.engineering.redhat.com/rh-osbs/openshift-ose-cluster-kube-cluster-api-rhel9-operator:v4.18
           name: manager

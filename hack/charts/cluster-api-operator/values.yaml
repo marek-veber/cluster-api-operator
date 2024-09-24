@@ -18,8 +18,8 @@ leaderElection:
   enabled: true
 image:
   manager:
-    repository: gcr.io/k8s-staging-capi-operator/cluster-api-operator
-    tag: dev
+    repository: registry-proxy.engineering.redhat.com/rh-osbs/openshift-ose-cluster-kube-cluster-api-rhel9-operator
+    tag: v4.18
     pullPolicy: IfNotPresent
 env:
   manager: []
