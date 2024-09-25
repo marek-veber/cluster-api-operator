@@ -449,9 +449,9 @@ $(CHART_PACKAGE_DIR):
 
 .PHONY: release
 release: clean-release $(RELEASE_DIR)  ## Builds and push container images using the latest git tag for the commit.
-	@if [ -z "${RELEASE_TAG}" ]; then echo "RELEASE_TAG is not set"; exit 1; fi
+	@if [ -z "${RELEASE_GIT_TAG}" ]; then echo "RELEASE_GIT_TAG is not set"; exit 1; fi
 	@if ! [ -z "$$(git status --porcelain)" ]; then echo "Your local git repository contains uncommitted changes, use git clean before proceeding."; exit 1; fi
-	git checkout "${RELEASE_TAG}"
+	git checkout "${RELEASE_GIT_TAG}"
 	# Set the manifest image to the production bucket.
 	$(MAKE) manifest-modification REGISTRY=$(PROD_REGISTRY)
 	$(MAKE) chart-manifest-modification REGISTRY=$(PROD_REGISTRY)
